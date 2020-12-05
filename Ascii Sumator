@@ -1,0 +1,22 @@
+function asciiSumator(input) {
+    let from = input.shift().charCodeAt();
+    let to = input.shift().charCodeAt();
+    let result = 0;
+    let start=0;
+    let end = 0;
+    input=input[0].split(``);
+    if(from>to){
+        start = to;
+        end = from;
+    } else {
+        start = from;
+        end = to;
+    }
+    input.forEach(element => {
+        element = element.charCodeAt();
+        if (element > start && element < end) {
+            result += element;
+        }
+    });
+    console.log(result);
+}
